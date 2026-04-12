@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AsyncAir Check-in</title>
+    <link rel="stylesheet" href="asyncair_checkin_app.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="panel left-panel">
+        <div class="hero">
+          <div class="hero-top">
+            <div class="brand">
+              <span class="brand-icon">✈</span>
+              <span>AsyncAir Terminal</span>
+            </div>
+            <div id="status-pill" class="status-pill idle">Listo para iniciar</div>
+          </div>
+
+          <h1>Check-in funcional con flujo asíncrono</h1>
+          <p>
+            Las validaciones de pasaporte y visa corren en paralelo. Solo si ambas resultan exitosas,
+            se asigna automáticamente un asiento disponible y luego se genera el pase de abordar.
+          </p>
+        </div>
+
+        <div class="mini-stats">
+          <div class="mini-card">
+            <span class="label">Pasaporte</span>
+            <span class="value">1.5s</span>
+          </div>
+          <div class="mini-card">
+            <span class="label">Visa</span>
+            <span class="value">2.0s</span>
+          </div>
+          <div class="mini-card">
+            <span class="label">Timeout global</span>
+            <span class="value">4.0s</span>
+          </div>
+        </div>
+
+        <div class="controls-card">
+          <h2 class="section-title">Ingresar pasajero</h2>
+          <form id="checkin-form" class="controls">
+            <input
+              id="passenger-id"
+              name="passengerId"
+              type="number"
+              min="1"
+              step="1"
+              placeholder="Ingresa el ID del pasajero"
+              required
+            />
+            <button id="submit-btn" type="submit">Iniciar check-in</button>
+          </form>
+          <p class="helper-text">
+            El usuario no elige el asiento. El sistema lo asigna automáticamente si las validaciones pasan.
+          </p>
+        </div>
+
+        <div class="status-box">
+          <h2 class="section-title">Consola de estado</h2>
+          <ul id="status-list" class="status-list"></ul>
+        </div>
+
+        <div id="result-root"></div>
+      </section>
+
+      <aside class="panel aircraft-panel">
+        <div class="aircraft-header">
+          <h2>Mapa de asientos del avión</h2>
+          <p>
+            Gris = disponible, rojo = ocupado, verde = asiento asignado al finalizar exitosamente el flujo.
+          </p>
+        </div>
+
+        <div class="legend">
+          <span class="legend-item"><span class="legend-swatch available"></span> Disponible</span>
+          <span class="legend-item"><span class="legend-swatch occupied"></span> Ocupado</span>
+          <span class="legend-item"><span class="legend-swatch assigned"></span> Asignado</span>
+        </div>
+
+        <div class="aircraft-shell">
+          <div class="cockpit">Cockpit</div>
+          <div id="seat-map" class="cabin"></div>
+        </div>
+
+        <p class="footer-note">
+          Regla de prueba: el pasaporte falla si el ID es par; la visa falla aleatoriamente un 30% de las veces.
+        </p>
+      </aside>
+    </main>
+    <script type="module" src="./estilo_module.js"></script>
+  </body>
+</html>
