@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AsyncAir - Check-in del Futuro</title>
+    <link rel="stylesheet" href="asyncair_checkin_app.css" />
+    <link rel="stylesheet" href="landing.css" />
+  </head>
+  <body class="landing-body">
+    <main class="landing-container">
+      <section class="landing-hero">
+        <div class="hero-content">
+          <div class="brand-large">
+            <span class="brand-icon-large">✈</span>
+            <span>AsyncAir</span>
+          </div>
+
+          <h1 class="landing-title">Check-in del Futuro</h1>
+          <p class="landing-subtitle">
+            Validaciones paralelas, asignación automática de asientos y 
+            <span class="highlight">procesamiento 100% asincrónico</span>
+          </p>
+
+          <div class="animated-plane-container">
+            <div class="plane-track">
+              <div class="plane-animated">✈</div>
+            </div>
+          </div>
+
+          <div class="features-grid">
+            <div class="feature-box">
+              <span class="feature-icon">⚡</span>
+              <h3>Paralelo</h3>
+              <p>Pasaporte y visa validados simultáneamente con Promise.all</p>
+            </div>
+
+            <div class="feature-box">
+              <span class="feature-icon">🔄</span>
+              <h3>Asincrónico</h3>
+              <p>Flujo reactivo basado en Promises y callbacks</p>
+            </div>
+
+            <div class="feature-box">
+              <span class="feature-icon">⏱️</span>
+              <h3>Timeout</h3>
+              <p>Promise.race para garantizar máximo 4 segundos</p>
+            </div>
+
+            <div class="feature-box">
+              <span class="feature-icon">💺</span>
+              <h3>Automático</h3>
+              <p>Asiento asignado sin intervención del usuario</p>
+            </div>
+          </div>
+
+          <div class="stats-container">
+            <div class="stat">
+              <span class="stat-number" data-target="2847">0</span>
+              <span class="stat-label">Pasajeros procesados</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-number" data-target="98">0</span>
+              <span class="stat-label">% de éxito</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-number" data-target="3.2">0</span>
+              <span class="stat-label">s promedio</span>
+            </div>
+          </div>
+
+          <a href="asyncair_checkin_app.html" class="cta-button">
+            <span class="button-text">Iniciar Check-in</span>
+            <span class="button-arrow">→</span>
+          </a>
+
+          <p class="footer-hint">
+            💡 Prueba con ID impar para que el pasaporte sea válido. ¡Cada sesión es independiente!
+          </p>
+        </div>
+      </section>
+
+      <section class="landing-background">
+        <div class="floating-element float-1">✈</div>
+        <div class="floating-element float-2">📋</div>
+        <div class="floating-element float-3">🌐</div>
+      </section>
+    </main>
+
+    <script type="module" src="./landing.js"></script>
+  </body>
+</html>
