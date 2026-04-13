@@ -206,7 +206,8 @@
   });
 
   const safeUpdate = (requestId, reducer) => {
-    if (requestId === store.getState().currentRequestId) {
+    const current = store.getState();
+    if (requestId === current.currentRequestId && current.phase === "running") {
       store.dispatch(reducer);
     }
   };
