@@ -44,12 +44,19 @@
           <h2 class="section-title">Ingresar pasajero</h2>
           <form id="checkin-form" class="controls">
             <input
+              id="passenger-name"
+              name="passengerName"
+              type="text"
+              placeholder="Nombre del pasajero"
+              required
+            />
+            <input
               id="passenger-id"
               name="passengerId"
               type="number"
               min="1"
               step="1"
-              placeholder="Ingresa el ID del pasajero"
+              placeholder="ID del pasajero"
               required
             />
             <button id="submit-btn" type="submit">Iniciar check-in</button>
